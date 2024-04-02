@@ -1,0 +1,116 @@
+/*CSS para la bandas superiores e inferiores*/
+
+/*body para especificar las características generales*/
+body {
+  margin: 0;
+  position: relative;
+  padding-bottom: 5vh;
+  min-height: 100vh;
+}
+
+/*top-strip --> Toda la parte arriba de la banda azul de la pantalla excepto las letras*/
+.top-strip {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-around;
+  padding: 1vh;
+  margin: 0 3%;
+}
+
+.top-strip a {
+  width: 5vh;
+  height: 9vh;
+  margin: 0 2%;
+  margin-right: 8vh;
+}
+
+.top-strip img {
+  margin-top: 1vh;
+  width: 6vh;
+  height: 6vh;
+}
+
+/*Se especifica el formato para el título en la parte superior*/
+.title {
+  flex: 1;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3vh;
+  font-weight: bold;
+  margin-top: 1.5vh;
+}
+
+/*Espacio dejado en la parte superior debajo de la banda azul*/
+.bienvenido{
+  height: 7vh;
+}
+
+/*navigation --> especificaciones para la banda azul*/
+.navigation {
+  background-color: #0a055e;
+  padding: 1vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4vh;
+}
+
+/*nav-option --> Especificaciones para los elementos dentro de la banda azul*/
+.nav-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #cb970c;
+}
+
+.nav-option a {
+  color: white;
+  font-size: 2.5vh;
+  font-weight: bold;
+  margin: 2vh;
+}
+
+.nav-option img {
+  width: 3vh;
+  height: 3vh;
+}
+
+/*bottom-stripe --> Especificaciones para la banda gris debajo del todo*/
+.bottom-stripe {
+  background-color: #696b74;
+  height: 4vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position:absolute; 
+  bottom:0; 
+}
+
+.bottom-stripe h1 {
+  color: #ffffff;
+  font-size: 2vh;
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
+/*Especificaciones usadas para los posibles diferentes tamaños de pantalla*/
+@media (max-width: 900px) {
+  .nav-option a {
+    color: white;
+    font-size: 2vh;
+    font-weight: bold;
+    margin: 1vh;
+  }
+  .nav-option img {
+    width: 2vh;
+    height: 2vh;
+  }
+  .title h1 {
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin-top: 1vh;
+  }
+}

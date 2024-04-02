@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>PEArepositorio</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/practica.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Cabecera -->
+      <div class="top-strip">
+        <!-- Franja superior -->
+        <a href="https://www.unam.mx/#" target="_blank">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/UNAM.png?v=1699326356334"
+            alt="Escudo de la UNAM"
+          />
+        </a>
+        <a href="https://cuaieed.unam.mx/" target="_blank">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/CUAIEED.png?v=1699326343300"
+            alt="Escudo de CUAIED"
+          />
+        </a>
+        <div class="title">
+          <!-- Título -->
+          <h1>Repositorio de Prácticas Educativas Abiertas</h1>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <div class="navigation">
+        <!-- Opciones de navegación -->
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/houseWhite.png?v=1701922093222"
+            alt="Ícono de casa blanco"
+          />
+          <a href="/">Inicio</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/lupaWhite.png?v=1701923095282"
+            alt="Ícono de lupa blanco"
+          />
+          <a href="explora.html">Explora</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/shareWhite.png?v=1701923096318"
+            alt="Ícono de comparte blanco"
+          />
+          <a href="comparte.html">Comparte</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/questionWhite.png?v=1701923097222"
+            alt="Ícono de pregunta blanco"
+          />
+          <a href="dudas.html">Dudas</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/starWhite.png?v=1701923365825"
+            alt="Ícono de estrella blanco"
+          />
+          <a href="acercade.html">De interés</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <!-- Contenido de detalles -->
+        <div class="izquierda">
+          <!-- Izquierda -->
+          <img
+              src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/estudiante.jpg?v=1701918632781"
+              alt="Estudiante trabajando"
+            />
+          <p>
+            <strong>Autor/a: </strong><span id="nombre"></span>
+            <span id="apellido_paterno"></span>
+            <span id="apellido_materno"></span>
+          </p>
+          <p><strong>Entidad Académica: </strong><span id="institucion"></span></p>
+        </div>
+        <div class="derecha">
+          <!-- Derecha -->
+          <h1><span id="titulo"></span></h1>
+          <p><span id="descripcion"></span></p>
+          <div class="cesionD" id="descarga-container">
+            <a href="" target="_blank">
+              <img
+                src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/downloadWhite.png?v=1701928003523"
+                alt="Ícono de descarga blanco"
+              />
+            </a>
+          </div>
+          <div class="cc">
+            <img
+              src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/CC.png?v=1710832245496"
+              alt="Imagen para CC"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Formulario para dejar un comentario -->
+      <form class="formulario" id="commentForm">
+        <h2>Califica la practica:</h2>
+        <!-- Correo electrónico -->
+        <div class="contenedor">
+          <div>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <!-- Calificación -->
+          <div>
+            <label for="rating">Calificación (1-10):</label>
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              min="1"
+              max="10"
+              required
+            />
+          </div>
+          <!-- Comentario -->
+          <div>
+            <label for="comment">Comentario:</label>
+            <textarea id="comment" name="comment" required></textarea>
+          </div>
+          <button type="submit">Enviar comentario</button>
+        </div>
+      </form>
+
+      <!-- Script para manejar los datos de los parámetros de la URL y actualizar el contenido HTML -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          console.log("Script is running!"); // Comprueba si el script se está ejecutando
+
+          // Obtener valores de parámetros de la URL
+          const queryParams = new URLSearchParams(window.location.search);
+          const nombre = queryParams.get("nombre");
+          const apellido_paterno = queryParams.get("apellido_paterno");
+          const apellido_materno = queryParams.get("apellido_materno");
+          const titulo = queryParams.get("titulo");
+          const descripcion = queryParams.get("descripcion");
+          const descarga = queryParams.get("descarga");
+          const institucion = queryParams.get("institucion");
+
+          document.getElementById("nombre").textContent = nombre;
+          document.getElementById("apellido_paterno").textContent =
+            apellido_paterno;
+          document.getElementById("apellido_materno").textContent =
+            apellido_materno;
+          document.getElementById("titulo").textContent = titulo;
+          document.getElementById("descripcion").textContent = descripcion;
+          document.getElementById("descarga").textContent = descarga;
+          document.getElementById("institucion").textContent = institucion;
+
+          function displayFile(containerId, fileBlob) {
+            const container = document.getElementById(containerId);
+            const fileType = fileBlob.type;
+
+            if (fileType.startsWith("image/")) {
+              const img = document.createElement("img");
+              img.src = URL.createObjectURL(fileBlob);
+              container.appendChild(img);
+            } else if (fileType.startsWith("video/")) {
+              const video = document.createElement("video");
+              video.src = URL.createObjectURL(fileBlob);
+              video.controls = true;
+              container.appendChild(video);
+            } else if (fileType.startsWith("audio/")) {
+              const audio = document.createElement("audio");
+              audio.src = URL.createObjectURL(fileBlob);
+              audio.controls = true;
+              container.appendChild(audio);
+            } else {
+              const downloadLink = document.createElement("a");
+              downloadLink.href = URL.createObjectURL(fileBlob);
+              downloadLink.textContent = "Descargar";
+              downloadLink.download = "archivo"; // Establecer el atributo download al nombre de archivo apropiado
+              container.appendChild(downloadLink);
+            }
+          }
+
+          displayFile("descarga-container", descarga);
+        });
+      </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bottom-stripe">
+      <a
+        href="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/T%C3%A9rminos%20y%20Condiciones%20pdf.pdf?v=1709607202098"
+        target="_blank"
+      >
+        <h1>Términos y condiciones</h1>
+      </a>
+      <a
+        href="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/AVISO%20DE%20PRIVACIDAD.pdf?v=1709607202878"
+        target="_blank"
+      >
+        <h1>Aviso de privacidad integral</h1>
+      </a>
+    </footer>
+  </body>
+</html>

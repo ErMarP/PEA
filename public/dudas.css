@@ -1,0 +1,99 @@
+/*izquierdaDudas --> Especificaciones para la parte de la izquierda de la pantalla*/
+.izquierdaDudas {
+  width: 35vh;
+  height: 35vh;
+  border-radius: 50%;
+  background-color: #a91212;
+  margin-top: 9%;
+  margin-left: 10%;
+  position: absolute;
+}
+
+/*inicioDudas --> Especificaciones para la parte de la derecha de la pantalla, las preguntas*/
+.inicioDudas img {
+  width: 35vh;
+  height: 35vh;
+  border-radius: 50%;
+  margin-top: 10%;
+  margin-left: 12%;
+  position: absolute;
+}
+
+/*preguntas --> Especificaciones para la sección de todas las preguntas*/
+.preguntas {
+  width: 90vh;
+  margin-left: 40%;
+  position: static;
+}
+
+/*contenedor-pregunta --> Especificaciones para el contenedor de cada una de las preguntas*/
+.contenedor-pregunta {
+  background: white;
+  border: 2vh solid transparent;
+  border-radius: 2vh;
+  overflow: hidden;
+  transition: .3s ease all;
+  cursor: pointer;
+  margin: 1vh;
+}
+
+/*pregunta --> Especificaciones para cada una de las preguntas*/
+.pregunta {
+  font-weight: 500;
+  font-size: 2.5vh;
+  line-height: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+/*respuesta --> Especificaciones para cada una de las respuestas*/
+.respuesta {
+  font-size: 2vh;
+  color: #808080;
+  line-height:2.5vh;
+  max-height: 0;
+  opacity: 0; 
+  transition: .9s ease all;
+  text-align: justify;
+} 
+
+/*Especificaciones para cuando se da click en una de las preguntas*/
+.contenedor-pregunta.activa .respuesta {
+	opacity: 1;
+	margin-top: 20px;
+}
+
+/*@media --> Diferentes especificaciones usadas para los posibles diferentes tamaños de pantalla*/
+@media (max-width: 1200px) {
+  .preguntas {
+    width: 77vh;
+  }
+}
+
+@media (max-width: 1000px) {
+  .preguntas {
+    margin-top: 35%;
+    margin-left: 15%;
+    position: static;
+  }
+  .izquierdaDudas {
+    margin-left: 25%;
+  }
+
+  .inicioDudas img {
+    margin-left: 27%;
+  }
+}
+
+@media (max-width: 800px) {
+  .preguntas {
+    margin-top: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .preguntas {
+    margin-top: 55%;
+    width: 70vh;
+  }
+}

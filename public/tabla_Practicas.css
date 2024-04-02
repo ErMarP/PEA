@@ -1,0 +1,86 @@
+/*search --> Todas las especificaciones para la parte de la búsqueda(donde se escribe) - Tambien el menú desplegable*/
+.search {
+  margin: 2vh;
+  margin-left: 75vh;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+}
+
+.search input[type="text"] {
+  padding: 0.7vh;
+  font-size: 1.7vh; 
+  border-top-left-radius: 3vh;
+  border-top-right-radius: 3vh;
+  border-bottom-left-radius: 3vh;
+  border-bottom-right-radius: 3vh;
+}
+
+.search button {
+  padding: 1px;
+  background-color: #0A055E;
+  border-top-left-radius: 1vh;
+  border-top-right-radius: 1vh;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+}
+
+.search button img {
+  width: 25px; 
+  height: 25px; 
+}
+
+/*publish --> Título de las "Publicaciones recientes"*/
+.publish h1{
+  margin-left: 5vh;
+  font-size: 3vh;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/*table --> Especificaciones de la tabla"*/
+table {
+  margin-left: 5vh;
+  width: 95%;
+  background-color: gold;
+  border-collapse: collapse;
+}
+
+/* Estilos para las cabeceras de la tabla */
+#data-table th {
+  background-color: gold;
+  color: black;
+  text-align: center
+}
+
+/* Estilos para las celdas de la tabla */
+#data-table td {
+  background-color: white;
+  color: black;
+  text-align: center
+}
+
+/* Estilos para las filas impares */
+#data-table tr:nth-child(odd) td {
+  background-color: #0A055E;
+  color: #F5F5F5;
+}
+
+/* Estilos para el menú desplegable */
+.search select {
+  margin-left: 2vh;
+  padding: 5px;
+  font-size: 14px;
+  border: solid 2 px black;
+  border-radius: 1vh;
+  margin-right: 2vh;
+  background-color: white;
+  color: black;
+  height: 4vh; /* Ajustar la altura según sea necesario */
+}
+
+.search select option {
+  color: black; /* Color para las opciones del menú desplegable */
+}
