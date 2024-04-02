@@ -1,0 +1,73 @@
+/*Parte del index*/
+/*Parte del inicio que contendrá todos los objetos*/
+.inicio {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*iphone --> imagen del iphone que se muestra en el fondo*/
+.iphone {
+  position: absolute;
+  opacity: 0.3;
+  width: 130vh;
+}
+
+.iphone img {
+  width: 110vh;
+  height: 60vh;
+}
+
+/*videoPEA --> Vídeo que se muestra y se reproduce automáticamente en un loop*/
+.videoPEA {
+  height: 48vh;
+  width: 76vh;
+  margin: 3vh;
+  margin-top: 2vh;
+}
+
+/*Izquierda --> Sección usada para crear el fondo gris detrás del video*/
+.izquierda {
+  height: 52vh;
+  width: 82vh;
+  background-color: #a8abc1;
+  margin: 3vh;
+  position: relative;
+}
+
+/*repo --> Título del repo en negritas y sus especificaciones visuales*/
+.repo {
+  height: 30vh;
+  width: 40%;
+  margin: 8vh;
+  position: static;
+}
+
+.repo h1 {
+  margin-top: 7vh;
+  font-size: 7vh;
+  font-weight: bold;
+  animation: textoTransparente 3s infinite;
+}
+
+/*textoTransparente --> Animación usada en el título para que aparezca y desaparezca*/
+@keyframes textoTransparente {
+  0% {
+    opacity: 1; /* Opacidad inicial (completamente visible) */
+  }
+  50% {
+    opacity: 0.2; /* Opacidad intermedia (semi-transparente) */
+  }
+  100% {
+    opacity: 1; /* Opacidad final (completamente visible) */
+  }
+}
+
+/*Especificaciones usadas para los posibles diferentes tamaños de pantalla*/
+@media (max-width: 1000px) {
+  .inicio {
+    display: block;
+  }
+  .iphone {
+    width: 70vh;
+  }
+}

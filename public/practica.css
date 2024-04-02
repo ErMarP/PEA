@@ -1,0 +1,90 @@
+/*Especificaciones generales para la pantalla*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+/*container --> Contenedor usado para separar la parte izquierda y derecha de la pantalla*/
+.container {
+  display: flex;
+  justify-content: space-around;
+  height: 55vh;
+  width: 200vh;
+}
+
+/*izquierda --> Parte de la pantlla donde se especifica el autor, entidad, foto */
+.izquierda{
+  background-color: #97D2F3;
+  height: 55vh;
+}
+
+.izquierda p {
+  margin-top:3vh;
+  text-align: center;
+  width: 45vh;
+  font-size: 2.5vh;
+}
+
+.izquierda img {
+  width: 25vh;
+  height: 30vh;
+  border-radius: 50%;
+  margin-top: 10%;
+  margin-left: 25%;
+}
+
+.derecha{
+  margin-top: 2vh;
+  margin-left:30vh;
+  background-color: #97D2F3;
+  height: 27vh;
+}
+
+/*deercha --> Zona de la pantalla para la demás descripción de la práctica*/
+.derecha h1{
+  margin-top: 5vh;
+  text-align: center;
+  font-weight: bold;
+}
+
+.derecha p{
+  margin-top: 3vh;
+  text-align: center;
+  width: 75vh;
+  font-size: 2.5vh;
+}
+
+
+/*cc --> Características para la imágen de cc*/
+.cc img{
+  margin-top: 15vh;
+  margin-left: 14vh;
+  text-align: center;
+  height: 13vh;
+  width: 61vh;
+}
+
+/*cesionD --> Especificaciones para el link de descarga y la parte de cc*/
+.cesionD {
+  margin-top: 4vh;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  background-color: #0a055e;
+  margin-left: 68vh;
+}
+
+.cesionD a {
+  width: 16vh;
+}
+
+.cesionD img {
+  width: 4vh;
+  height: 4vh;
+}
+
+/*formulario --> Características para la parte visual del formulario para dejar una crítica*/
+.formulario {
+  margin-top: 2vh;
+  margin-left: 25vh;
+}

@@ -1,0 +1,87 @@
+/*imagesExplora --> Contenedor para separar las secciones de explora en estudiante, docente e investigador*/
+.imagesExplora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+/*opcion --> Especificaciones para cada opción en explora (estudiante, docente e investigador) como tamaño de iamgen, etc.*/
+.opcion {
+  width: 33.3%;
+  display: inline-block;
+}
+
+.opcion img {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+}
+
+/*titulosExploraEstudiante --> Características del título para estudiantes*/
+.titulosExploraEstudiante {
+  width: 28vh;
+  background-color: #a91212;
+  margin: auto;
+}
+
+.titulosExploraEstudiante h1 {
+  font-size: 4vh;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+}
+
+/*titulosExploraDocente --> Características del título para docentes*/
+.titulosExploraDocente {
+  width: 28vh;
+  background-color: #66a329;
+  margin: auto;
+}
+
+.titulosExploraDocente h1 {
+  font-size: 4vh;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+}
+
+/*titulosExploraInvestigador --> Características del título para investigadores*/
+.titulosExploraInvestigador {
+  width: 28vh;
+  background-color: #30a5e8;
+  margin: auto;
+}
+
+.titulosExploraInvestigador h1 {
+  font-size: 4vh;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+}
+
+/*descripcionesExplora --> Especificaciones para todas las descripciones debajo de los títulos*/
+.descripcionesExplora h3 {
+  font-size: 2.5vh;
+  width: 80%;
+  margin: auto;
+}
+
+/*Función para hacer que la imagen se haga grande si se pasa el mouse sobre ella*/
+.opcion:hover img {
+  transform: scale(1.1);
+}
+
+/*Especificaciones usadas para los posibles diferentes tamaños de pantalla*/
+@media (max-width: 900px) {
+  .imagesExplora {
+    display: block;
+    margin-top: 0vh;
+  }
+  .opcion {
+    width: 100%;
+    display: inline-block;
+    margin-top: 5vh;
+  }
+}

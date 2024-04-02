@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PEArepositorio</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/tabla_Practicas.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Barra superior con logotipos y título -->
+      <div class="top-strip">
+        <a href="https://www.unam.mx/#" target="_blank">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/UNAM.png?v=1699326356334"
+            alt="Escudo de la UNAM"
+          />
+        </a>
+        <a href="https://cuaieed.unam.mx/" target="_blank">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/CUAIEED.png?v=1699326343300"
+            alt="Escudo de CUAIED"
+          />
+        </a>
+        <div class="title">
+          <h1>Repositorio de Prácticas Educativas Abiertas</h1>
+        </div>
+      </div>
+
+      <!-- Barra de navegación -->
+      <div class="navigation">
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/houseWhite.png?v=1701922093222"
+            alt="Ícono de casa blanco"
+          />
+          <a href="/">Inicio</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/lupaWhite.png?v=1701923095282"
+            alt="Ícono de lupa blanco"
+          />
+          <a href="/explora.html">Explora</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/shareWhite.png?v=1701923096318"
+            alt="Ícono de comparte blanco"
+          />
+          <a href="/comparte.html">Comparte</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/questionWhite.png?v=1701923097222"
+            alt="Ícono de pregunta blanco"
+          />
+          <a href="/dudas.html">Dudas</a>
+        </div>
+        <div class="nav-option">
+          <img
+            src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/starWhite.png?v=1701923365825"
+            alt="Ícono de estrella blanco"
+          />
+          <a href="/acercade.html">De interés</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <!-- Sección de inicio para estudiantes -->
+      <div class="inicioEst">
+        <div class="search">
+          <!-- Formulario de búsqueda -->
+          <form action="#">
+            <input type="text" placeholder=" Busca aquí" id="searchInput" />
+            <select id="filterSelect">
+              <option value="">Todo</option>
+              <option value="titulo">Título</option>
+              <option value="apellido_paterno">Apellido Paterno</option>
+              <option value="apellido_materno">Apellido Materno</option>
+              <option value="nombre">Nombre</option>
+              <option value="descripcion">Descripción</option>
+              <option value="materia">Materia</option>
+            </select>
+            <button>
+              <img
+                src="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/lupaWhite.png?v=1701923095282"
+                alt="Ícono de lupa blanco"
+              />
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Sección de publicaciones recientes -->
+      <div class="publish">
+        <h1>Publicaciones Recientes</h1>
+      </div>
+    </section>
+
+    <!-- Tabla para mostrar los datos -->
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Materia</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchData();
+
+        const searchInput = document.getElementById("searchInput");
+        const filterSelect = document.getElementById("filterSelect");
+
+        searchInput.addEventListener("input", fetchData);
+        filterSelect.addEventListener("change", fetchData);
+      });
+
+      async function fetchData() {
+        try {
+          const response = await fetch("/estudiantes.html/data");
+          const data = await response.json();
+          console.log("Data:", data);
+
+          const tableBody = document.querySelector("#data-table tbody");
+          tableBody.innerHTML = "";
+
+          const searchInput = document.getElementById("searchInput");
+          const filterSelect = document.getElementById("filterSelect");
+
+          const searchText = searchInput.value.toLowerCase();
+          const filterValue = filterSelect.value.toLowerCase();
+
+          data.forEach((row) => {
+            if (
+              row.audiencia.toLowerCase() === "estudiantes" &&
+              (filterValue === "" ||
+                row[filterValue].toLowerCase().includes(searchText)) &&
+              (row.titulo.toLowerCase().includes(searchText) ||
+                row.apellido_paterno.toLowerCase().includes(searchText) ||
+                row.apellido_materno.toLowerCase().includes(searchText) ||
+                row.nombre.toLowerCase().includes(searchText) ||
+                row.descripcion.toLowerCase().includes(searchText) ||
+                row.materia.toLowerCase().includes(searchText))
+            ) {
+              const newRow = document.createElement("tr");
+              newRow.innerHTML = `
+            <td><a href="#" onclick="openDetails('${row.correo}', '${row.nombre}', '${row.apellido_paterno}', '${row.apellido_materno}', 
+            '${row.nacionalidad}', '${row.carta_autorizacion}', '${row.tipo_contenido}',
+            '${row.titulo}', '${row.materia}', '${row.descripcion}', '${row.descarga}', '${row.institucion}',
+            '${row.idPractica}')">${row.titulo}</a></td>
+            <td>${row.apellido_paterno}</td>
+            <td>${row.apellido_materno}</td>
+            <td>${row.nombre}</td>
+            <td>${row.descripcion}</td>
+            <td>${row.materia}</td>
+          `;
+              tableBody.appendChild(newRow);
+            }
+          });
+        } catch (error) {
+          console.error("Error al conseguir datos:", error);
+        }
+      }
+
+      function openDetails(
+        correo,
+        nombre,
+        apellido_paterno,
+        apellido_materno,
+        nacionalidad,
+        carta_autorizacion,
+        tipo_contenido,
+        titulo,
+        materia,
+        descripcion,
+        descarga,
+        institucion,
+        id // Add id parameter
+      ) {
+      const details = window.open(`practica.html?&nombre=${encodeURIComponent(nombre)}&apellido_paterno=${encodeURIComponent(apellido_paterno)}&apellido_materno=${encodeURIComponent(apellido_materno)}&titulo=${encodeURIComponent(titulo)}&descripcion=${encodeURIComponent(descripcion)}&descarga=${encodeURIComponent(descarga)}&institucion=${encodeURIComponent(institucion)}&id=${encodeURIComponent(id)}`, "_self");
+    }
+
+    </script>
+  </body>
+
+  <!-- Barra inferior con enlaces a términos y condiciones y aviso de privacidad -->
+  <footer class="bottom-stripe">
+    <a
+      href="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/T%C3%A9rminos%20y%20Condiciones%20pdf.pdf?v=1709607202098"
+      target="_blank"
+    >
+      <h1>Términos y condiciones</h1>
+    </a>
+    <a
+      href="https://cdn.glitch.global/e9de70ea-9119-46f1-aa31-a81ee376a1fd/AVISO%20DE%20PRIVACIDAD.pdf?v=1709607202878"
+      target="_blank"
+    >
+      <h1>Aviso de privacidad integral</h1>
+    </a>
+  </footer>
+</html>

@@ -1,0 +1,207 @@
+/*inicioComparte --> especificaciones generales de la pantalla*/
+.inicioComparte {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*containerComparte --> contenedor para separar la parte de la izquierda y de la derecha*/
+.containerComparte {
+  width: 35vh;
+  height: 35vh;
+  margin-left: 6%;
+}
+
+/*izquierdaComparte --> parte izquierda donde se tienen la imagen y el fondo verde*/
+.izquierdaComparte {
+  width: 35vh;
+  height: 35vh;
+  border-radius: 50%;
+  background-color: #66a329;
+  margin-top: 6%;
+  margin-left: 6%;
+  position: absolute;
+}
+
+.containerComparte img {
+  width: 35vh;
+  height: 35vh;
+  border-radius: 50%;
+  margin-top: 7%;
+  margin-left: 8%;
+  position: absolute;
+}
+
+/*containerDerecha --> Especificaciones para el lado de la derecha de la pantalla*/
+.containerDerecha {
+  width: 150vh;
+}
+
+/*comparteTitulo --> Especificaciones para el título para compartir*/
+.comparteTitulo {
+  width: 70vh;
+  margin-left: 40vh;
+  margin-top: 3vh;
+}
+
+.comparteTitulo h1 {
+  font-size: 4.5vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.comparteTexto {
+  width: 70vh;
+  margin-left: 40vh;
+  margin-top: 7vh;
+}
+
+.comparteTexto h3 {
+  font-size: 2.5vh;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.aCompartir {
+  width: 30vh;
+  border-top-left-radius: 5vh;
+  border-top-right-radius: 5vh;
+  border-bottom-left-radius: 5vh;
+  border-bottom-right-radius: 5vh;
+  background-color: #0def47;
+  opacity: 0.9;
+  margin-left: 60vh;
+  margin-top: 3vh;
+}
+
+.aCompartir a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.cesion {
+  display: flex;
+  justify-content: center;
+  width: 60vh;
+  margin-left: 45vh;
+  margin-top: 3vh;
+}
+
+.cesion h3{
+  font-size: 3vh;
+  margin-top: 1vh;
+}
+
+.cesionD {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  background-color: #0a055e;
+  margin-left: 3vh;
+}
+
+.cesionD a {
+  width: 8vh;
+}
+
+.cesionD img {
+  width: 5vh;
+  height: 5vh;
+}
+
+.terminosC {
+  width: 90vh;
+  display: flex;
+  margin-left: 30vh;
+  margin-top: 3vh;
+  justify-content: center;
+}
+
+.terminosC h3 {
+  font-size: 2vh;
+  text-align: justify;
+}
+
+/* Parte para comparte hover*/
+.cesionD:hover img {
+  transform: scale(1.1);
+  overflow: hidden;
+}
+
+.contenedor-pregunta:hover {
+  box-shadow: 0 0 13px 0 rgba(10, 5, 94, .5);
+}
+
+/*@media --> Diferentes especificaciones usadas para los posibles diferentes tamaños de pantalla*/
+@media (max-width: 900px) {
+  .inicioComparte {
+    display: block;
+  }
+  .izquierdaComparte {
+    margin-left: 25%;
+    margin-top: 2%;
+  }
+  .containerDerecha {
+    width: 100vh;
+  }
+  .containerComparte img {
+    margin-left: 27%;
+    margin-top: 2%;
+  }
+  .comparteTitulo {
+    margin-left: 20%;
+    margin-top: 3%;
+  }
+  .comparteTexto {
+    margin-left: 20%;
+  }
+  .aCompartir {
+    margin-left: 40%;
+  }
+  .cesion {
+    margin-left: 25%;
+  }
+  .terminosC {
+    margin-left: 10%;
+  }
+}
+@media (max-width: 750px) {
+  .comparteTitulo {
+    width: 50vh;
+  }
+  .comparteTexto {
+    width: 50vh;
+  }
+  .aCompartir {
+    margin-left: 32%;
+    width: 25vh;
+  }
+  .cesion {
+    margin-left: 28%;
+    width: 35vh;
+    text-align: center;
+  }
+  .cesionD {
+    margin-top: 2vh;
+  }
+  .terminosC {
+    margin-left: 25%;
+    width: 40vh;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .aCompartir {
+    margin-left: 22%;
+  }
+  .cesion {
+    margin-left: 20%;
+  }
+  .terminosC {
+    margin-left: 20%;
+  }
+}
